@@ -6,3 +6,4 @@ from .models import Article
 
 def article_list(request):
     articles = Article.objects.all()
+    return render(request, "home.html", {"articles": articles})
