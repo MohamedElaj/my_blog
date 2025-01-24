@@ -1,6 +1,5 @@
 from django.db import models
 from datetime import date
-from django_ckeditor_5.fields import CKEditor5Field
 
 # Create your models here.
 
@@ -8,7 +7,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 class Article(models.Model):
     author = models.CharField(max_length=20)
     title = models.CharField(max_length=255)
-    body = CKEditor5Field("Text", config_name="extends")
+    body = models.TextField()
     release_date = models.DateField(default=date.today)
 
     def __str__(self):
