@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Article List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mohamed's Homepage</title>
 </head>
 <body>
-    <h1>Articles</h1>
-    <ul>
-        {% for article in articles %}
-            <li>
-                <a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    <header>
+        <h2>Mohamed's Blog Homepage</h2>
+        <hr>
+    </header>
+    <b>Writings: </b><br>
+    {% for article in articles %}
+        <a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a>
+    {% endfor %}
+    <hr>
+
 </body>
 </html>
