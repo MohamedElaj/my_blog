@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Article
 
 # Create your views here.
@@ -11,4 +11,4 @@ def article_list(request):
 
 def article_detail(request, pk):
     articles = get_object_or_404(Article, pk=pk)
-    return render(request, "article_detail.html", {"article": article})
+    return render(request, "article_detail.html", {"article": articles})
